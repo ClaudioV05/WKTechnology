@@ -112,6 +112,7 @@ begin
   end
   else
     MessageDlgPos('Não foi possível conectar o bando de dados.', mtError, [mbOk], 0, GetXMsg(Self), GetYMsg(Self));
+
 end;
 
 procedure TFrmPrincipal.BtnFechaTodasClick(Sender: TObject);

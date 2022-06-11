@@ -33,26 +33,44 @@ object FrmClientes: TFrmClientes
     object LblCampoPesquisa: TLabel
       Left = 4
       Top = 3
-      Width = 78
+      Width = 84
       Height = 13
       Caption = '&Campo Pesquisa'
       FocusControl = CboCampoPesquisa
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
     end
     object LblOrdem: TLabel
       Left = 4
       Top = 43
-      Width = 59
+      Width = 64
       Height = 13
       Caption = '&Ordenar por'
       FocusControl = CboOrdem
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
     end
     object Label1: TLabel
-      Left = 202
+      Left = 206
       Top = 45
-      Width = 49
+      Width = 53
       Height = 13
       Caption = 'Pagina'#231#227'o'
       FocusControl = CboOrdem
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
     end
     object Bevel1: TBevel
       Left = 365
@@ -64,15 +82,21 @@ object FrmClientes: TFrmClientes
     object Label2: TLabel
       Left = 376
       Top = 3
-      Width = 83
+      Width = 90
       Height = 13
       Caption = 'Confirmar Cliente'
       FocusControl = CboOrdem
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
     end
     object EdtPesquisa: TEdit
       Left = 202
       Top = 20
-      Width = 153
+      Width = 158
       Height = 21
       CharCase = ecUpperCase
       TabOrder = 2
@@ -84,7 +108,13 @@ object FrmClientes: TFrmClientes
       Width = 83
       Height = 21
       Style = csDropDownList
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Segoe UI'
+      Font.Style = []
       ItemIndex = 1
+      ParentFont = False
       TabOrder = 1
       Text = 'contem'
       Items.Strings = (
@@ -93,11 +123,17 @@ object FrmClientes: TFrmClientes
         #233' igual a')
     end
     object ChkDescendente: TCheckBox
-      Left = 113
+      Left = 110
       Top = 62
-      Width = 81
+      Width = 89
       Height = 17
       Caption = 'Descendente'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 4
       OnClick = ChkDescendenteClick
     end
@@ -107,7 +143,13 @@ object FrmClientes: TFrmClientes
       Width = 100
       Height = 21
       Style = csDropDownList
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Segoe UI'
+      Font.Style = []
       ItemIndex = 0
+      ParentFont = False
       TabOrder = 3
       Text = 'CODIGO'
       OnChange = CboOrdemChange
@@ -121,7 +163,13 @@ object FrmClientes: TFrmClientes
       Width = 100
       Height = 21
       Style = csDropDownList
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Segoe UI'
+      Font.Style = []
       ItemIndex = 0
+      ParentFont = False
       TabOrder = 0
       Text = 'CODIGO'
       OnChange = CboCampoPesquisaChange
@@ -130,12 +178,17 @@ object FrmClientes: TFrmClientes
         'NOME')
     end
     object BtnRetornar: TBitBtn
-      Left = 202
+      Left = 206
       Top = 58
       Width = 75
       Height = 25
       Hint = 'Retornar'
       Caption = '&Retornar'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Segoe UI'
+      Font.Style = []
       Glyph.Data = {
         36060000424D3606000000000000360000002800000020000000100000000100
         1800000000000006000000000000000000000000000000000000FF00FFFF00FF
@@ -188,19 +241,25 @@ object FrmClientes: TFrmClientes
         FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFA2A2A2B0B0B0B7
         B7B7B4B4B4A8A8A8989898FF00FFFF00FFFF00FFFF00FFFF00FF}
       NumGlyphs = 2
+      ParentFont = False
       ParentShowHint = False
       ShowHint = False
       TabOrder = 5
       OnClick = BtnRetornarClick
     end
     object BtnAvancar: TBitBtn
-      Left = 280
+      Left = 284
       Top = 58
       Width = 75
       Height = 25
       Hint = 'Avan'#231'ar'
       Caption = '&Avan'#231'ar'
       Enabled = False
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Segoe UI'
+      Font.Style = []
       Glyph.Data = {
         36060000424D3606000000000000360000002800000020000000100000000100
         1800000000000006000000000000000000000000000000000000FF00FFFF00FF
@@ -253,18 +312,24 @@ object FrmClientes: TFrmClientes
         FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFA2A2A2B0B0B0B7
         B7B7B4B4B4A8A8A8989898FF00FFFF00FFFF00FFFF00FFFF00FF}
       NumGlyphs = 2
+      ParentFont = False
       ParentShowHint = False
       ShowHint = False
       TabOrder = 6
       OnClick = BtnAvancarClick
     end
     object BtnConfirmaCliente: TBitBtn
-      Left = 375
+      Left = 376
       Top = 18
       Width = 88
       Height = 25
       Caption = '  F5'
       Default = True
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Segoe UI'
+      Font.Style = []
       Glyph.Data = {
         DE010000424DDE01000000000000760000002800000024000000120000000100
         0400000000006801000000000000000000001000000000000000000000000000
@@ -284,6 +349,7 @@ object FrmClientes: TFrmClientes
         0000}
       ModalResult = 1
       NumGlyphs = 2
+      ParentFont = False
       TabOrder = 7
       OnClick = BtnConfirmaClienteClick
     end
