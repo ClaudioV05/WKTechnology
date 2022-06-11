@@ -4,7 +4,7 @@
 
 ## Tools used:
 
-### Delphi XE10 Seattle Development.
-### MySQL database.
-### Versioning: Git.
-### Repository: GitHub.
+- [x] Delphi XE10 Seattle Development.
+- [x] MySQL database.
+- [x] Versioning: Git.
+- [x] Repository: GitHub.
