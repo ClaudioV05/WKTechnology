@@ -29,7 +29,7 @@ type
     lblQtdProduto: TLabel;
     LblVUnitProduto: TLabel;
     BtnFinalizarVenda: TButton;
-    Edit1: TEdit;
+    EdtCodProduto: TEdit;
     procedure BtnAvancarClick(Sender: TObject);
     procedure BtnExcluirClick(Sender: TObject);
     procedure BtnRetornarClick(Sender: TObject);
@@ -49,6 +49,7 @@ type
     procedure StgListaKeyPress(Sender: TObject; var Key: Char);
     procedure BtnAlterarClick(Sender: TObject);
     procedure BtnFinalizarVendaClick(Sender: TObject);
+    procedure EdtCodProdutoExit(Sender: TObject);
   private
     { Private declarations }
     procedure Pesquisa(RetornoPesquisa: TRetornoPesquisa; PaginaAtual: Integer; TamPagina: Word; _Codigo: Integer);
@@ -68,7 +69,7 @@ var
 implementation
 
 uses View.FrmPrincipal, View.FrmPedidosdetEd, Controller.Pedidosdet, StringGridUtils, FuncStrings,
-  Controller.Pedidos, View.FrmProdutos;
+  Controller.Pedidos, View.FrmProdutos, Controller.Produtos;
 
 {$R *.DFM}
 
@@ -122,6 +123,31 @@ procedure TFrmPedidosdet.ChkDescendenteClick(Sender: TObject);
 begin
   UPaginaAtual := 1;
   Pesquisa(rpListagem, UPaginaAtual, UTamPagina, 0);
+
+end;
+
+procedure TFrmPedidosdet.EdtCodProdutoExit(Sender: TObject);
+var
+  CtrlProdutos: TControllerProdutos;
+begin
+  if (EdtCodProduto.Text = EmptyStr) then
+  begin
+    EdtDescProduto.Clear;
+    Exit;
+  end;
+
+  CtrlProdutos := TControllerProdutos.Create;
+  try
+    if (CtrlProdutos.ModelProdutos.Ler(StrToIntDef(EdtDescProduto.Text, 0))) then
+    begin
+      CarregaRegistroDosProdutos(IntToStr(CtrlProdutos.ModelProdutos.CODIGO),
+                                 CtrlProdutos.ModelProdutos.DESCRICAO,
+                                 FloatToStr(CtrlProdutos.ModelProdutos.PRECOVENDA));
+    end;
+    
+  finally
+    FreeAndNil(CtrlProdutos);
+  end;
 
 end;
 
@@ -402,11 +428,9 @@ end;
 procedure TFrmPedidosdet.GeraRegistroPedidos(CodCliente: Integer);
 var
   Erro: String;
-  RetornouOk: Boolean;
   CtrlPedidos: TControllerPedidos;
 begin
   Erro := '';
-  RetornouOk := False;
   CtrlPedidos := TControllerPedidos.Create;
 
   try
@@ -420,9 +444,7 @@ begin
     CtrlPedidos.ModelPedidos.DATAEMISSAO := Now;
     CtrlPedidos.ModelPedidos.VALORTOTAL := 0;
 
-    if (CtrlPedidos.ModelPedidos.Persistir(Erro)) then
-      RetornouOk := True
-    else
+    if not (CtrlPedidos.ModelPedidos.Persistir(Erro)) then
       MessageDlgPos(Erro, mtError, [mbOk], 0, GetXMsg(Self), GetYMsg(Self));
 
   finally
@@ -432,13 +454,13 @@ begin
 end;
 
 procedure TFrmPedidosdet.CarregaRegistroDosProdutos(CodProduto, Descricao, PrecoVenda: String);
-var
-  Aux: String;
 begin
   LimparCampos;
 
   UCodProduto := 0;
   UCodProduto := StrToIntDef(CodProduto, 0);
+  
+  EdtCodProduto.Text := CodProduto;
   EdtDescProduto.Text := Descricao;
   EdtQtdProduto.Text := '1';
   EdtVUnitProduto.Text := FormatFloat('###,##0.00', StrToFloatDef(PrecoVenda, 0));
@@ -453,7 +475,6 @@ begin
   begin
     if (Components[I] is TEdit) then
       (Components[I] as TEdit).Clear;
-
   end;
 
 end;
@@ -479,7 +500,6 @@ procedure TFrmPedidosdet.AlterarDadosProduto;
 var
   Sequencial: Integer;
   CtrlPedidosdet: TControllerPedidosdet;
-  ResultadoModal: TModalResult;
 begin
   if (URow = 0) then
     URow := 1;

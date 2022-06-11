@@ -137,7 +137,7 @@ object FrmPedidosdet: TFrmPedidosdet
       TabOrder = 5
       OnClick = BtnFinalizarVendaClick
     end
-    object Edit1: TEdit
+    object EdtCodProduto: TEdit
       Left = 5
       Top = 35
       Width = 39
@@ -146,6 +146,7 @@ object FrmPedidosdet: TFrmPedidosdet
       NumbersOnly = True
       TabOrder = 6
       OnChange = EdtDescProdutoChange
+      OnExit = EdtCodProdutoExit
     end
   end
   object Panel2: TPanel
