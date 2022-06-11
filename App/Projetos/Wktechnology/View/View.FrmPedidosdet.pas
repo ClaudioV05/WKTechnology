@@ -30,9 +30,7 @@ type
     LblVUnitProduto: TLabel;
     BtnFinalizarVenda: TButton;
     EdtCodProduto: TEdit;
-    procedure BtnAvancarClick(Sender: TObject);
     procedure BtnExcluirClick(Sender: TObject);
-    procedure BtnRetornarClick(Sender: TObject);
     procedure CboCampoPesquisaChange(Sender: TObject);
     procedure CboOrdemChange(Sender: TObject);
     procedure ChkDescendenteClick(Sender: TObject);
@@ -84,15 +82,6 @@ procedure TFrmPedidosdet.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   FrmPrincipal.MostraEscondePanFundo(True);
   Action := caFree;
-
-end;
-
-procedure TFrmPedidosdet.BtnRetornarClick(Sender: TObject);
-begin
-  Dec(UPaginaAtual);
-  if UPaginaAtual <= 0 then
-    UPaginaAtual := 1;
-  Pesquisa(rpListagem, UPaginaAtual, UTamPagina, 0);
 
 end;
 
@@ -157,6 +146,7 @@ begin
     BtnConfirmar.Enabled := False
   else
     BtnConfirmar.Enabled := True;
+    
 end;
 
 procedure TFrmPedidosdet.EdtPesquisaChange(Sender: TObject);
@@ -170,13 +160,6 @@ end;
 procedure TFrmPedidosdet.BtnAlterarClick(Sender: TObject);
 begin
   AlterarDadosProduto;
-
-end;
-
-procedure TFrmPedidosdet.BtnAvancarClick(Sender: TObject);
-begin
-  Inc(UPaginaAtual);
-  Pesquisa(rpListagem, UPaginaAtual, UTamPagina, 0);
 
 end;
 
