@@ -179,9 +179,8 @@ begin
       CarregaPanTotais;
       EdtDescProduto.SetFocus;
     end
-    else begin
+    else
       MessageDlgPos(Erro, mtError, [mbOk], 0, GetXMsg(Self), GetYMsg(Self));
-    end;
 
   finally
     FreeAndNil(CtrlPedidosdet);
@@ -236,33 +235,37 @@ begin
   if (StgLista.Cells[0, URow] = EmptyStr) then
     Exit;
 
-  CtrlPedidos := TControllerPedidos.Create;
-  try
-    // Preenche os valores pertinentes
-    CtrlPedidos.ModelPedidos.InicializaValores;
+  if (MessageDlgPos('Finalizar Venda ?', mtConfirmation, [mbYes, mbNo], 0, GetXMsg(Self), GetYMsg(Self), mbNo) = mrYes) then
+  begin
 
-    CtrlPedidos.ModelPedidos.CODIGO := UCodPedido;
-    CtrlPedidos.ModelPedidos.Ler(UCodPedido);
-    CtrlPedidos.ModelPedidos.AcaoDePersistencia := adpAlteracao;
-    CtrlPedidos.ModelPedidos.VALORTOTAL := StrToFloat(panTotal.Caption);
+    CtrlPedidos := TControllerPedidos.Create;
+    try
+      // Preenche os valores pertinentes
+      CtrlPedidos.ModelPedidos.InicializaValores;
 
-    if (CtrlPedidos.ModelPedidos.Persistir(Erro)) then
-    begin
-      LimparCampos;
-      LimpaDadosGrid(StgLista);
+      CtrlPedidos.ModelPedidos.CODIGO := UCodPedido;
+      CtrlPedidos.ModelPedidos.Ler(UCodPedido);
+      CtrlPedidos.ModelPedidos.AcaoDePersistencia := adpAlteracao;
+      CtrlPedidos.ModelPedidos.VALORTOTAL := StrToFloat(panTotal.Caption);
 
-      FrmPedidosdet.Close;
+      if (CtrlPedidos.ModelPedidos.Persistir(Erro)) then
+      begin
+        LimparCampos;
+        LimpaDadosGrid(StgLista);
 
-      FrmPrincipal.PanGeral.Visible := True;
-      FrmPrincipal.Show;
+        FrmPedidosdet.Close;
 
-    end
-    else begin
-      MessageDlgPos(Erro, mtError, [mbOk], 0, GetXMsg(Self), GetYMsg(Self));
+        FrmPrincipal.PanGeral.Visible := True;
+        FrmPrincipal.Show;
+
+      end
+      else
+        MessageDlgPos(Erro, mtError, [mbOk], 0, GetXMsg(Self), GetYMsg(Self));
+
+    finally
+      FreeAndNil(CtrlPedidos);
     end;
 
-  finally
-    FreeAndNil(CtrlPedidos);
   end;
 
 end;
