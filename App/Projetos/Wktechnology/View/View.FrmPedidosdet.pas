@@ -6,8 +6,7 @@ uses
    Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
    System.StrUtils, System.UITypes, Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs,
    Vcl.Grids, Vcl.StdCtrls, Vcl.Mask, Vcl.Buttons, Vcl.ExtCtrls, Vcl.ComCtrls, Vcl.Menus,
-   Controller.DeclTiposConsts, AlignedTStringGrid, EnterCheckBox, EnterComboBox,
-   EnterEdit, NumEdit, Vcl.Imaging.pngimage;
+   Controller.DeclTiposConsts, AlignedTStringGrid, NumEdit, Vcl.Imaging.pngimage;
 
 type
   TFrmPedidosdet = class(TForm)

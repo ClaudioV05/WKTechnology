@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
   Vcl.Graphics, Vcl.Menus, Vcl.Imaging.jpeg, Vcl.ExtCtrls, Vcl.Controls, Vcl.Forms,
-  Vcl.StdCtrls, System.UITypes, Vcl.Buttons, Vcl.Dialogs, Controller.DeclTiposConsts, MilEdit, EnterEdit;
+  Vcl.StdCtrls, System.UITypes, Vcl.Buttons, Vcl.Dialogs, Controller.DeclTiposConsts;
 
 type
   TFrmPedidosdetEd = class(TForm)

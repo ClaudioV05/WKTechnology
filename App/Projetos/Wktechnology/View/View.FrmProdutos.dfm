@@ -1,6 +1,7 @@
 object FrmProdutos: TFrmProdutos
   Left = 0
   Top = 0
+  Caption = 'Escolha de produto'
   ClientHeight = 513
   ClientWidth = 759
   Color = clWindow
