@@ -1,7 +1,7 @@
 object FrmClientes: TFrmClientes
   Left = 0
   Top = 0
-  Caption = 'Clientes'
+  Caption = 'Pesquisa de Clientes'
   ClientHeight = 513
   ClientWidth = 759
   Color = clWhite
@@ -63,7 +63,7 @@ object FrmClientes: TFrmClientes
     end
     object Label2: TLabel
       Left = 376
-      Top = 43
+      Top = 3
       Width = 83
       Height = 13
       Caption = 'Confirmar Cliente'
@@ -260,7 +260,7 @@ object FrmClientes: TFrmClientes
     end
     object BtnConfirmaCliente: TBitBtn
       Left = 375
-      Top = 58
+      Top = 18
       Width = 88
       Height = 25
       Caption = '  F5'

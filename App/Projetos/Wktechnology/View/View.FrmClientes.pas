@@ -184,6 +184,7 @@ end;
 procedure TFrmClientes.FormCreate(Sender: TObject);
 begin
   KeyPreview := True;
+
   CboModoPesquisa.ItemIndex := 0;
   CboOrdem.ItemIndex := 1;
 
