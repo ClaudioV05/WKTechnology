@@ -28,7 +28,7 @@ object FrmPedidosdetEd: TFrmPedidosdetEd
     ParentBackground = False
     TabOrder = 1
     object BtnSalvar: TBitBtn
-      Left = 16
+      Left = 26
       Top = 5
       Width = 100
       Height = 27
@@ -40,7 +40,7 @@ object FrmPedidosdetEd: TFrmPedidosdetEd
       OnClick = BtnSalvarClick
     end
     object BtnCancelar: TBitBtn
-      Left = 122
+      Left = 132
       Top = 5
       Width = 100
       Height = 27
@@ -62,7 +62,7 @@ object FrmPedidosdetEd: TFrmPedidosdetEd
     TabOrder = 0
     object LblCodigo: TLabel
       Left = 3
-      Top = 41
+      Top = 61
       Width = 123
       Height = 13
       Alignment = taRightJustify
@@ -72,7 +72,7 @@ object FrmPedidosdetEd: TFrmPedidosdetEd
     end
     object LblPrecounitario: TLabel
       Left = 48
-      Top = 95
+      Top = 115
       Width = 78
       Height = 13
       Alignment = taRightJustify
@@ -81,7 +81,7 @@ object FrmPedidosdetEd: TFrmPedidosdetEd
     end
     object Label1: TLabel
       Left = 48
-      Top = 69
+      Top = 89
       Width = 78
       Height = 13
       Alignment = taRightJustify
@@ -90,7 +90,7 @@ object FrmPedidosdetEd: TFrmPedidosdetEd
     end
     object EdtDescProduto: TEdit
       Left = 132
-      Top = 38
+      Top = 58
       Width = 286
       Height = 21
       TabStop = False
@@ -104,7 +104,7 @@ object FrmPedidosdetEd: TFrmPedidosdetEd
     end
     object EdtPrecounitario: TEdit
       Left = 132
-      Top = 92
+      Top = 112
       Width = 93
       Height = 21
       Alignment = taRightJustify
@@ -115,7 +115,7 @@ object FrmPedidosdetEd: TFrmPedidosdetEd
     end
     object EdtQuantidade: TEdit
       Left = 132
-      Top = 65
+      Top = 85
       Width = 93
       Height = 21
       Alignment = taRightJustify
