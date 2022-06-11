@@ -21,7 +21,7 @@ object FrmPedidosdet: TFrmPedidosdet
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 196
+    Width = 238
     Height = 470
     Align = alLeft
     Color = clWindow
@@ -67,10 +67,10 @@ object FrmPedidosdet: TFrmPedidosdet
       ParentFont = False
     end
     object EdtDescProduto: TEdit
-      Left = 5
+      Left = 47
       Top = 35
       Width = 186
-      Height = 21
+      Height = 33
       CharCase = ecUpperCase
       TabOrder = 0
       OnChange = EdtDescProdutoChange
@@ -79,7 +79,7 @@ object FrmPedidosdet: TFrmPedidosdet
       Left = 5
       Top = 91
       Width = 139
-      Height = 21
+      Height = 33
       CharCase = ecUpperCase
       TabOrder = 1
     end
@@ -87,7 +87,7 @@ object FrmPedidosdet: TFrmPedidosdet
       Left = 5
       Top = 143
       Width = 139
-      Height = 21
+      Height = 33
       CharCase = ecUpperCase
       TabOrder = 2
     end
@@ -137,23 +137,36 @@ object FrmPedidosdet: TFrmPedidosdet
       TabOrder = 5
       OnClick = BtnFinalizarVendaClick
     end
+    object Edit1: TEdit
+      Left = 5
+      Top = 35
+      Width = 39
+      Height = 33
+      CharCase = ecUpperCase
+      NumbersOnly = True
+      TabOrder = 6
+      OnChange = EdtDescProdutoChange
+    end
   end
   object Panel2: TPanel
-    Left = 196
+    Left = 238
     Top = 0
-    Width = 563
+    Width = 521
     Height = 470
     Align = alClient
     TabOrder = 1
+    ExplicitLeft = 196
+    ExplicitWidth = 563
     object PanBotoes: TPanel
       Left = 1
       Top = 1
-      Width = 561
+      Width = 519
       Height = 35
       Align = alTop
       Color = clWhite
       ParentBackground = False
       TabOrder = 0
+      ExplicitWidth = 561
       object BtnAlterar: TBitBtn
         Left = 4
         Top = 6
@@ -289,7 +302,7 @@ object FrmPedidosdet: TFrmPedidosdet
     object StgLista: TStringGrid
       Left = 1
       Top = 36
-      Width = 561
+      Width = 519
       Height = 433
       Align = alClient
       ColCount = 1
@@ -301,6 +314,7 @@ object FrmPedidosdet: TFrmPedidosdet
       OnKeyPress = StgListaKeyPress
       OnSelectCell = StgListaSelectCell
       ExplicitTop = 37
+      ExplicitWidth = 561
       ExplicitHeight = 432
     end
   end

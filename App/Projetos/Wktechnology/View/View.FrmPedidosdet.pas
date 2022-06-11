@@ -29,6 +29,7 @@ type
     lblQtdProduto: TLabel;
     LblVUnitProduto: TLabel;
     BtnFinalizarVenda: TButton;
+    Edit1: TEdit;
     procedure BtnAvancarClick(Sender: TObject);
     procedure BtnExcluirClick(Sender: TObject);
     procedure BtnRetornarClick(Sender: TObject);
