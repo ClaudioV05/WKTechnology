@@ -1,0 +1,16 @@
+01. Download 32bit and 64bit files zip from the website https://downloads.mysql.com/archives/c-c/
+
+02. Unzip both files into separate folders.
+
+03. Create the following folder structure somewhere on the disk, e.g. "C:\MySql_Library\32bit\" and "C:\MySql_Library\64bit\".
+
+04. Copy the libmysql.dll files from the unzipped zip files to the corresponding folders (32bit libmysql.dll to "C:\MySql_Library\32bit\" and 64bit libmysql.dll to "C:\MySql_Library\64bit\"). Do not copy these files anywhere else!
+
+05. Now, in a 64-bit application, put the FDPhysMySQLDriverLink component on the form and in the VendorLib field enter the path to the 32-bit libmysql.dll files (e.g. "C:\MySql_Library\32bit\libmysql.dll").
+
+06. Test the FDConnection connection in the IDE.
+
+07. In the program code of the event, e.g. OnCreate, write the following code: "FDPhysMySQLDriverLink.VendorLib:= 'C:\MySql_Library\64bit\libmysql.dll'" and press F9. The program should work with the MySql database.
+
+
+Important! It works when the 64-bit libmysql.dll library is version 6.1.11 or less. It does not work in version 8.0.18 and 8.0.19. (Error: EFDException with message '[FireDAC][Phys][MySQL]-314 is shown)
