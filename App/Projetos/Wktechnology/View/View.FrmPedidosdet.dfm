@@ -27,7 +27,6 @@ object FrmPedidosdet: TFrmPedidosdet
     Color = clWindow
     ParentBackground = False
     TabOrder = 0
-    ExplicitTop = -6
     object lblCodProduto: TLabel
       Left = 5
       Top = 12
@@ -71,7 +70,7 @@ object FrmPedidosdet: TFrmPedidosdet
       Left = 5
       Top = 35
       Width = 186
-      Height = 30
+      Height = 21
       CharCase = ecUpperCase
       TabOrder = 0
       OnChange = EdtDescProdutoChange
@@ -80,7 +79,7 @@ object FrmPedidosdet: TFrmPedidosdet
       Left = 5
       Top = 91
       Width = 139
-      Height = 30
+      Height = 21
       CharCase = ecUpperCase
       TabOrder = 1
     end
@@ -88,7 +87,7 @@ object FrmPedidosdet: TFrmPedidosdet
       Left = 5
       Top = 143
       Width = 139
-      Height = 30
+      Height = 21
       CharCase = ecUpperCase
       TabOrder = 2
     end
@@ -97,7 +96,7 @@ object FrmPedidosdet: TFrmPedidosdet
       Top = 227
       Width = 139
       Height = 38
-      Caption = 'Confirmar'
+      Caption = 'Confirmar  F6'
       Enabled = False
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
@@ -113,7 +112,7 @@ object FrmPedidosdet: TFrmPedidosdet
       Top = 183
       Width = 139
       Height = 38
-      Caption = 'Escolher produto'
+      Caption = 'Escolher produto  F5'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -13
@@ -123,6 +122,21 @@ object FrmPedidosdet: TFrmPedidosdet
       TabOrder = 3
       OnClick = BtnEscolherProdutoClick
     end
+    object BtnFinalizarVenda: TButton
+      Left = 5
+      Top = 271
+      Width = 139
+      Height = 38
+      Caption = 'Finalizar Venda  F12'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 5
+      OnClick = BtnFinalizarVendaClick
+    end
   end
   object Panel2: TPanel
     Left = 196
@@ -131,14 +145,11 @@ object FrmPedidosdet: TFrmPedidosdet
     Height = 470
     Align = alClient
     TabOrder = 1
-    ExplicitLeft = 150
-    ExplicitWidth = 609
-    ExplicitHeight = 432
     object PanBotoes: TPanel
       Left = 1
       Top = 1
       Width = 561
-      Height = 36
+      Height = 35
       Align = alTop
       Color = clWhite
       ParentBackground = False
@@ -277,9 +288,9 @@ object FrmPedidosdet: TFrmPedidosdet
     end
     object StgLista: TStringGrid
       Left = 1
-      Top = 37
+      Top = 36
       Width = 561
-      Height = 432
+      Height = 433
       Align = alClient
       ColCount = 1
       DefaultRowHeight = 18
@@ -289,10 +300,8 @@ object FrmPedidosdet: TFrmPedidosdet
       TabOrder = 2
       OnKeyPress = StgListaKeyPress
       OnSelectCell = StgListaSelectCell
-      ExplicitLeft = 69
-      ExplicitTop = 82
-      ExplicitWidth = 604
-      ExplicitHeight = 431
+      ExplicitTop = 37
+      ExplicitHeight = 432
     end
   end
   object Panel3: TPanel
@@ -304,9 +313,9 @@ object FrmPedidosdet: TFrmPedidosdet
     TabOrder = 2
     object Label1: TLabel
       AlignWithMargins = True
-      Left = 476
+      Left = 497
       Top = 4
-      Width = 134
+      Width = 113
       Height = 35
       Align = alRight
       Alignment = taRightJustify
@@ -318,9 +327,7 @@ object FrmPedidosdet: TFrmPedidosdet
       Font.Style = [fsBold]
       ParentFont = False
       Layout = tlCenter
-      ExplicitLeft = 504
-      ExplicitTop = 1
-      ExplicitHeight = 41
+      ExplicitHeight = 21
     end
     object panTotal: TPanel
       AlignWithMargins = True

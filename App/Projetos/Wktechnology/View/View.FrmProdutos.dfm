@@ -28,13 +28,12 @@ object FrmProdutos: TFrmProdutos
     Color = clWindow
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 304
     object BtnConfirmar: TBitBtn
       Left = 10
       Top = 16
       Width = 130
       Height = 33
-      Caption = 'Confirmar'
+      Caption = 'Confirmar F6'
       Default = True
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText

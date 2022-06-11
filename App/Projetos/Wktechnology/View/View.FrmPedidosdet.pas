@@ -29,9 +29,9 @@ type
     Label1: TLabel;
     lblQtdProduto: TLabel;
     LblVUnitProduto: TLabel;
+    BtnFinalizarVenda: TButton;
     procedure BtnAvancarClick(Sender: TObject);
     procedure BtnExcluirClick(Sender: TObject);
-    procedure BtnPesquisarClick(Sender: TObject);
     procedure BtnRetornarClick(Sender: TObject);
     procedure CboCampoPesquisaChange(Sender: TObject);
     procedure CboOrdemChange(Sender: TObject);
@@ -48,6 +48,7 @@ type
     procedure EdtDescProdutoChange(Sender: TObject);
     procedure StgListaKeyPress(Sender: TObject; var Key: Char);
     procedure BtnAlterarClick(Sender: TObject);
+    procedure BtnFinalizarVendaClick(Sender: TObject);
   private
     { Private declarations }
     procedure Pesquisa(RetornoPesquisa: TRetornoPesquisa; PaginaAtual: Integer; TamPagina: Word; _Codigo: Integer);
@@ -82,13 +83,6 @@ procedure TFrmPedidosdet.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   FrmPrincipal.MostraEscondePanFundo(True);
   Action := caFree;
-
-end;
-
-procedure TFrmPedidosdet.BtnPesquisarClick(Sender: TObject);
-begin
-  UPaginaAtual := 1;
-  Pesquisa(rpListagem, UPaginaAtual, UTamPagina, 0);
 
 end;
 
@@ -231,6 +225,48 @@ begin
 
 end;
 
+procedure TFrmPedidosdet.BtnFinalizarVendaClick(Sender: TObject);
+var
+  Erro: String;
+  CtrlPedidos: TControllerPedidos;
+begin
+  if (URow = 0) then
+    URow := 1;
+
+  if (StgLista.Cells[0, URow] = EmptyStr) then
+    Exit;
+
+  CtrlPedidos := TControllerPedidos.Create;
+  try
+    // Preenche os valores pertinentes
+    CtrlPedidos.ModelPedidos.InicializaValores;
+
+    CtrlPedidos.ModelPedidos.CODIGO := UCodPedido;
+    CtrlPedidos.ModelPedidos.Ler(UCodPedido);
+    CtrlPedidos.ModelPedidos.AcaoDePersistencia := adpAlteracao;
+    CtrlPedidos.ModelPedidos.VALORTOTAL := StrToFloat(panTotal.Caption);
+
+    if (CtrlPedidos.ModelPedidos.Persistir(Erro)) then
+    begin
+      LimparCampos;
+      LimpaDadosGrid(StgLista);
+
+      FrmPedidosdet.Close;
+
+      FrmPrincipal.PanGeral.Visible := True;
+      FrmPrincipal.Show;
+
+    end
+    else begin
+      MessageDlgPos(Erro, mtError, [mbOk], 0, GetXMsg(Self), GetYMsg(Self));
+    end;
+
+  finally
+    FreeAndNil(CtrlPedidos);
+  end;
+
+end;
+
 procedure TFrmPedidosdet.FormCreate(Sender: TObject);
 begin
   KeyPreview := True;
@@ -252,8 +288,11 @@ begin
     else if ((Key = VK_DOWN) or (Key = VK_RETURN)) and (Shift = []) and not (ActiveControl is TButtonControl) then
       SelectNext(ActiveControl, True, True);
   end;
-  if (Key = VK_F3) then
-    BtnPesquisarClick(Sender);
+
+  if (Key = VK_F5) then
+    BtnEscolherProdutoClick(Sender)
+  else if (Key = VK_F6) then
+    BtnConfirmarClick(Sender);
 
 end;
 
@@ -461,7 +500,6 @@ begin
     FrmPedidosdetEd.EdtPrecounitario.Text := FloatToStr(CtrlPedidosdet.ModelPedidosdet.PRECOUNITARIO);
     FrmPedidosdetEd.EdtQuantidade.text := FloatToStr(CtrlPedidosdet.ModelPedidosdet.QUANTIDADE);
     FrmPedidosdetEd.EdtDescProduto.Text := StgLista.Cells[2, URow];
-    //FrmPedidosdetEd.EdtValortotal.Text := FloatToStr(CtrlPedidosdet.ModelPedidosdet.VALORTOTAL);
 
     FrmPedidosdetEd.ShowModal;
 

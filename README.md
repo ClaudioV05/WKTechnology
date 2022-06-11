@@ -1,9 +1,10 @@
 # WKTechnology
 
-## Este projeto foi desenvolvido como parte do processo seletivo da WK Technology.
+## This project was developed as part of the WK Technology selection process.
 
-## Ferramentas utilizadas:
-### Desenvolvimento Delphi XE10 Seatle
-### Banco de dados MySQL
-### Versionamento: Git
-### Respositório: GitHub
+## Tools used:
+
+### Delphi XE10 Seattle Development.
+### MySQL database.
+### Versioning: Git.
+### Repository: GitHub.
