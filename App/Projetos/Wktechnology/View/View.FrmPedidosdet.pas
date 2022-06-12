@@ -244,7 +244,7 @@ begin
   if (StgLista.Cells[0, URow] = EmptyStr) then
     Exit;
 
-  if (MessageDlgPos('Finalizar Venda ?', mtConfirmation, [mbYes, mbNo], 0, GetXMsg(Self), GetYMsg(Self), mbNo) = mrYes) then
+  if (MessageDlgPos('Finalizar Venda?', mtConfirmation, [mbYes, mbNo], 0, GetXMsg(Self), GetYMsg(Self), mbNo) = mrYes) then
   begin
 
     CtrlPedidos := TControllerPedidos.Create;
@@ -274,7 +274,6 @@ begin
     finally
       FreeAndNil(CtrlPedidos);
     end;
-
   end;
 
 end;
