@@ -22,13 +22,14 @@ object FrmPedidosdet: TFrmPedidosdet
     Left = 0
     Top = 0
     Width = 238
-    Height = 470
+    Height = 463
     Align = alLeft
     Color = clWindow
     ParentBackground = False
     TabOrder = 0
+    ExplicitHeight = 470
     object lblCodProduto: TLabel
-      Left = 5
+      Left = 10
       Top = 12
       Width = 50
       Height = 17
@@ -41,7 +42,7 @@ object FrmPedidosdet: TFrmPedidosdet
       ParentFont = False
     end
     object lblQtdProduto: TLabel
-      Left = 5
+      Left = 10
       Top = 68
       Width = 72
       Height = 17
@@ -54,7 +55,7 @@ object FrmPedidosdet: TFrmPedidosdet
       ParentFont = False
     end
     object LblVUnitProduto: TLabel
-      Left = 5
+      Left = 10
       Top = 124
       Width = 34
       Height = 17
@@ -67,35 +68,37 @@ object FrmPedidosdet: TFrmPedidosdet
       ParentFont = False
     end
     object EdtDescProduto: TEdit
-      Left = 47
+      Left = 54
       Top = 35
-      Width = 186
-      Height = 33
+      Width = 178
+      Height = 30
       CharCase = ecUpperCase
-      TabOrder = 0
+      TabOrder = 1
       OnChange = EdtDescProdutoChange
     end
     object EdtQtdProduto: TEdit
-      Left = 5
+      Left = 10
       Top = 91
       Width = 139
-      Height = 33
-      CharCase = ecUpperCase
-      TabOrder = 1
-    end
-    object EdtVUnitProduto: TEdit
-      Left = 5
-      Top = 143
-      Width = 139
-      Height = 33
+      Height = 30
+      Alignment = taRightJustify
       CharCase = ecUpperCase
       TabOrder = 2
     end
-    object BtnConfirmar: TButton
-      Left = 5
-      Top = 227
+    object EdtVUnitProduto: TEdit
+      Left = 10
+      Top = 143
       Width = 139
-      Height = 38
+      Height = 30
+      Alignment = taRightJustify
+      CharCase = ecUpperCase
+      TabOrder = 3
+    end
+    object BtnConfirmar: TButton
+      Left = 10
+      Top = 229
+      Width = 139
+      Height = 40
       Caption = 'Confirmar  F6'
       Enabled = False
       Font.Charset = ANSI_CHARSET
@@ -104,14 +107,14 @@ object FrmPedidosdet: TFrmPedidosdet
       Font.Name = 'Segoe UI'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 4
+      TabOrder = 5
       OnClick = BtnConfirmarClick
     end
     object BtnEscolherProduto: TButton
-      Left = 5
+      Left = 10
       Top = 183
       Width = 139
-      Height = 38
+      Height = 40
       Caption = 'Escolher produto  F5'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
@@ -119,14 +122,14 @@ object FrmPedidosdet: TFrmPedidosdet
       Font.Name = 'Segoe UI'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 3
+      TabOrder = 4
       OnClick = BtnEscolherProdutoClick
     end
     object BtnFinalizarVenda: TButton
-      Left = 5
-      Top = 271
+      Left = 10
+      Top = 275
       Width = 139
-      Height = 38
+      Height = 40
       Caption = 'Finalizar Venda  F12'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
@@ -134,17 +137,18 @@ object FrmPedidosdet: TFrmPedidosdet
       Font.Name = 'Segoe UI'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 5
+      TabOrder = 6
       OnClick = BtnFinalizarVendaClick
     end
     object EdtCodProduto: TEdit
-      Left = 5
+      Left = 10
       Top = 35
       Width = 39
-      Height = 33
+      Height = 30
+      Alignment = taRightJustify
       CharCase = ecUpperCase
       NumbersOnly = True
-      TabOrder = 6
+      TabOrder = 0
       OnChange = EdtDescProdutoChange
       OnExit = EdtCodProdutoExit
     end
@@ -153,11 +157,12 @@ object FrmPedidosdet: TFrmPedidosdet
     Left = 238
     Top = 0
     Width = 521
-    Height = 470
+    Height = 463
     Align = alClient
     TabOrder = 1
     ExplicitLeft = 196
     ExplicitWidth = 563
+    ExplicitHeight = 470
     object PanBotoes: TPanel
       Left = 1
       Top = 1
@@ -304,7 +309,7 @@ object FrmPedidosdet: TFrmPedidosdet
       Left = 1
       Top = 36
       Width = 519
-      Height = 433
+      Height = 426
       Align = alClient
       ColCount = 1
       DefaultRowHeight = 18
@@ -321,9 +326,9 @@ object FrmPedidosdet: TFrmPedidosdet
   end
   object Panel3: TPanel
     Left = 0
-    Top = 470
+    Top = 463
     Width = 759
-    Height = 43
+    Height = 50
     Align = alBottom
     TabOrder = 2
     object Label1: TLabel
@@ -331,7 +336,7 @@ object FrmPedidosdet: TFrmPedidosdet
       Left = 497
       Top = 4
       Width = 113
-      Height = 35
+      Height = 42
       Align = alRight
       Alignment = taRightJustify
       Caption = 'Valor a Pagar   '
@@ -349,7 +354,7 @@ object FrmPedidosdet: TFrmPedidosdet
       Left = 616
       Top = 4
       Width = 139
-      Height = 35
+      Height = 42
       Align = alRight
       Alignment = taRightJustify
       Caption = '0,00'
@@ -362,6 +367,7 @@ object FrmPedidosdet: TFrmPedidosdet
       ParentBackground = False
       ParentFont = False
       TabOrder = 0
+      ExplicitHeight = 35
     end
   end
 end

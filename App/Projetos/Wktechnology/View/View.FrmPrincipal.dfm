@@ -1,7 +1,7 @@
 object FrmPrincipal: TFrmPrincipal
   Left = 0
   Top = 0
-  ClientHeight = 390
+  ClientHeight = 384
   ClientWidth = 687
   Color = clWindow
   Font.Charset = DEFAULT_CHARSET
@@ -2006,23 +2006,24 @@ object FrmPrincipal: TFrmPrincipal
         AFA291310000000049454E44AE426082}
       Stretch = True
       Transparent = True
-      ExplicitWidth = 960
-      ExplicitHeight = 540
+      ExplicitLeft = 11
+      ExplicitTop = -45
     end
   end
   object PanGeral: TPanel
-    AlignWithMargins = True
-    Left = 3
-    Top = 3
-    Width = 150
+    Left = 0
+    Top = 0
+    Width = 174
     Height = 384
     Align = alLeft
     TabOrder = 0
+    ExplicitLeft = 8
+    ExplicitTop = -61
     object BtnNovaVenda: TButton
-      Left = 7
+      Left = 14
       Top = 4
-      Width = 136
-      Height = 34
+      Width = 146
+      Height = 40
       Caption = 'Nova venda'
       Enabled = False
       Font.Charset = ANSI_CHARSET
@@ -2035,10 +2036,10 @@ object FrmPrincipal: TFrmPrincipal
       OnClick = BtnNovaVendaClick
     end
     object BtnFechaTodas: TButton
-      Left = 7
-      Top = 43
-      Width = 136
-      Height = 34
+      Left = 14
+      Top = 50
+      Width = 146
+      Height = 40
       Caption = 'Fecha Todas Janelas '
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
@@ -2051,8 +2052,8 @@ object FrmPrincipal: TFrmPrincipal
     end
   end
   object MainMenu1: TMainMenu
-    Left = 20
-    Top = 90
+    Left = 236
+    Top = 34
     object MenuItem1: TMenuItem
       Caption = '[]'
       object ViewNovaVenda: TMenuItem

@@ -127,7 +127,7 @@ begin
 
   CtrlProdutos := TControllerProdutos.Create;
   try
-    if (CtrlProdutos.ModelProdutos.Ler(StrToIntDef(EdtDescProduto.Text, 0))) then
+    if (CtrlProdutos.ModelProdutos.Ler(StrToIntDef(EdtCodProduto.Text, 0))) then
     begin
       CarregaRegistroDosProdutos(IntToStr(CtrlProdutos.ModelProdutos.CODIGO),
                                  CtrlProdutos.ModelProdutos.DESCRICAO,
