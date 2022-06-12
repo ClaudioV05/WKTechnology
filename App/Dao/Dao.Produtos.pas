@@ -1,7 +1,5 @@
 unit Dao.Produtos;
-// Unidade gerada pelo GeraClasseMVC para Delphi XE10 + FireDAC
-// Desenvolvido com base no modelo de Manoel Zanchetta.
-// Autor: Paulo F. Rocha Filho. Colaboração: Claudiomildo Ventura.
+
 interface
 
 uses
