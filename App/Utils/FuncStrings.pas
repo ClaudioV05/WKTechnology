@@ -145,8 +145,6 @@ begin
   // Função que capitaliza nomes próprios compostos, independentemente se estiverem em maiúsculo ou em minúsculo.
   // Capitaliza para minúsculo os caracteres 'E', 'DA', 'DE', 'DO', 'DAS', 'DOS'.
   // O caracter romano 'III' fica em maiúsculo.
-  // Exemplo de como a função pode receber o texto: EXECOM INFORMÁTICA
-  // Exemplo de retorno: Execom Informática
 
   Result := AnsiLowerCase(_Texto);
   TamTexto := Length(Result);

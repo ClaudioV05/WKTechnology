@@ -36,7 +36,7 @@ implementation
 {$R *.dfm}
 
 uses Vcl.Dialogs, Controller.Conexao, Controller.DeclTiposConsts, FuncStrings,
-  View.FrmPedidosdet, View.FrmClientes, View.FrmProdutos;
+  View.FrmPedidosdet, View.FrmClientes;
 
 procedure TFrmPrincipal.BtnNovaVendaClick(Sender: TObject);
 var
@@ -79,12 +79,11 @@ end;
 
 procedure TFrmPrincipal.FormCreate(Sender: TObject);
 begin
+  KeyPreview := True;
   PanFundo.Align := alClient;
   PanFundo.SendToBack;
 
   ConectaBanco;
-
-  KeyPreview := True;
 
 end;
 
