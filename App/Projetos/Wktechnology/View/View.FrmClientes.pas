@@ -25,6 +25,7 @@ type
     Bevel1: TBevel;
     BtnConfirmaCliente: TBitBtn;
     Label2: TLabel;
+    BtnPesquisar: TBitBtn;
     procedure BtnAvancarClick(Sender: TObject);
     procedure BtnExcluirClick(Sender: TObject);
     procedure BtnRetornarClick(Sender: TObject);
@@ -39,6 +40,7 @@ type
     procedure mniOrdenarClick(Sender: TObject);
     procedure StgListaSelectCell(Sender: TObject; aCol, aRow: Integer; var CanSelect: Boolean);
     procedure BtnConfirmaClienteClick(Sender: TObject);
+    procedure BtnPesquisarClick(Sender: TObject);
   private
     { Private declarations }
     procedure Pesquisa(RetornoPesquisa: TRetornoPesquisa; PaginaAtual: Integer; TamPagina: Word; _Codigo: Integer);
@@ -179,6 +181,12 @@ begin
 
   end;
 
+end;
+
+procedure TFrmClientes.BtnPesquisarClick(Sender: TObject);
+begin
+  UPaginaAtual := 1;
+  Pesquisa(rpListagem, UPaginaAtual, UTamPagina, 0);
 end;
 
 procedure TFrmClientes.FormCreate(Sender: TObject);
