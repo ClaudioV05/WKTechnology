@@ -23,6 +23,7 @@ type
   private
     { Private declarations }
     procedure ConectaBanco;
+    function CarregaVendorBd: String;
   public
     { Public declarations }
     procedure MostraEscondePanFundo(EFormFilho: Boolean);
@@ -82,9 +83,7 @@ begin
   KeyPreview := True;
   PanFundo.Align := alClient;
   PanFundo.SendToBack;
-
   ConectaBanco;
-
 end;
 
 procedure TFrmPrincipal.ConectaBanco;
@@ -92,15 +91,17 @@ var
   Conectado: Boolean;
   AInfoConexaoSQL: TInfoConexaoSQL;
 begin
+
   with AInfoConexaoSQL do
   begin
-    Database := 'Wktechnology'; // Caminho do banco de dados.
-    DriverID := 'MYSQL';
-    Password := '123';
-    Protocol := 'Local';
-    Server   := '';
-    Port     := '';
-    UserName := 'root';
+    Database  := 'wktechnology'; // Caminho do banco de dados.
+    DriverID  := 'MySQL';
+    Password  := '';
+    Protocol  := '';
+    Server    := '127.0.0.1';
+    Port      := '3306';
+    UserName  := 'root';
+    VendorLib := CarregaVendorBd;
   end;
 
   Conectado :=  TControllerConexao.GetInstance.DaoConexao.EstabeleceConexaoSQL(AInfoConexaoSQL);
@@ -126,6 +127,16 @@ begin
         (Components[I] as TForm).Close;
     end;
   end;
+end;
+
+function TFrmPrincipal.CarregaVendorBd: String;
+var
+  Aux: String;
+begin
+  Aux := '';
+  Aux := LowerCase(ExtractFilePath(Application.ExeName));
+  Aux := Aux + 'libmysql.dll';
+  Result := Aux;
 end;
 
 end.

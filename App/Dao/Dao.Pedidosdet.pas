@@ -382,7 +382,7 @@ begin
 
     CamposVisiveis := UpperCase(CamposVisiveis);
 
-    AFDQuery.SQL.Add('SELECT FIRST ' + StrTamPagina + ' SKIP ' + StrSkip + '');
+    AFDQuery.SQL.Add('SELECT');
     if ExisteCampo('CODIGO', CamposVisiveis) then
       AFDQuery.SQL.Add(' PEDIDOSDET.CODIGO,');
     if ExisteCampo('SEQUENCIAL', CamposVisiveis) then

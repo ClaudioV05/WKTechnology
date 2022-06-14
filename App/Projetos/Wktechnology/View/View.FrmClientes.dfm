@@ -63,7 +63,7 @@ object FrmClientes: TFrmClientes
       Top = 45
       Width = 53
       Height = 13
-      Caption = 'Pagina'#231#227'o'
+      Caption = 'P'#225'gina'#231#227'o'
       FocusControl = CboOrdem
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText

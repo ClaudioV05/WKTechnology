@@ -22,6 +22,7 @@ type TInfoConexaoSQL = record
   UserName: String;
   Server:   String;
   Port:     String;
+  VendorLib: String;
 end;
 
 implementation

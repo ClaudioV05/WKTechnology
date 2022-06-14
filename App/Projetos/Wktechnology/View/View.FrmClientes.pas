@@ -186,7 +186,7 @@ begin
   KeyPreview := True;
 
   CboModoPesquisa.ItemIndex := 0;
-  CboOrdem.ItemIndex := 1;
+  CboOrdem.ItemIndex := 0;
 
   UTamPagina := 20;
   UPaginaAtual := 1;

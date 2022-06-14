@@ -351,7 +351,7 @@ begin
 
     CamposVisiveis := UpperCase(CamposVisiveis);
 
-    AFDQuery.SQL.Add('SELECT FIRST ' + StrTamPagina + ' SKIP ' + StrSkip + '');
+    AFDQuery.SQL.Add('SELECT');
     if ExisteCampo('CODIGO', CamposVisiveis) then
       AFDQuery.SQL.Add(' CLIENTES.CODIGO AS " CÓDIGO ",');
     if ExisteCampo('NOME', CamposVisiveis) then
@@ -401,6 +401,8 @@ begin
     begin
       AFDQuery.SQL.Add('WHERE CLIENTES.CODIGO = ' + IntToStr(ValorPK));
     end;
+
+    AFDQuery.SQL.Add('LIMIT ' + StrTamPagina + ' OFFSET ' + StrSkip + '');
 
     AFDQuery.Open;
 

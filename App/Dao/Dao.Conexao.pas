@@ -7,11 +7,13 @@ uses
   FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.FB,
   FireDAC.Phys.FBDef, FireDAC.VCLUI.Wait, Data.DB, FireDAC.Comp.Client,
-  FireDAC.Phys.IB, FireDAC.Phys.IBDef, FireDAC.Dapt, Controller.DeclTiposConsts;
+  FireDAC.Phys.IB, FireDAC.Phys.IBDef, FireDAC.Dapt, FireDAC.Phys.MySQLDef,
+  FireDAC.Phys.MySQL, Controller.DeclTiposConsts;
 
 type
   TDaoConexao = class
     FConexao: TFDConnection;
+    FMySQLDriver: TFDPhysMySQLDriverLink;
   private
     { Private declarations }
   public
@@ -19,6 +21,7 @@ type
     constructor Create;
     destructor Destroy; override;
     property Conexao: TFDConnection read FConexao write FConexao;
+    property MySQLDriver: TFDPhysMySQLDriverLink read FMySQLDriver write FMySQLDriver;
     function EstabeleceConexaoSQL(AInfoConexaoSQL : TInfoConexaoSQL): Boolean;
     function CriarQuery: TFDQuery;
     function CriarTransaction: TFDTransaction;
@@ -49,6 +52,7 @@ constructor TDaoConexao.Create;
 begin
   inherited Create;
   FConexao := TFDConnection.Create(nil);
+  FMySQLDriver := TFDPhysMySQLDriverLink.Create(nil);
   FConexao.LoginPrompt := False;
 end;
 
@@ -73,6 +77,7 @@ end;
 destructor TDaoConexao.Destroy;
 begin
   FreeAndNil(FConexao);
+  FreeAndNil(FMySQLDriver);
   inherited;
 end;
 
@@ -81,6 +86,7 @@ begin
   Result := False;
   try
     FConexao.Connected := False;
+
     with FConexao do
     begin
       Params.Clear;
@@ -91,9 +97,15 @@ begin
       Params.Add('Server='    + AInfoConexaoSQL.Server);
       Params.Add('Port='      + AInfoConexaoSQL.Port);
       Params.Add('USER_NAME=' + AInfoConexaoSQL.UserName);
-
     end;
+
+    with FMySQLDriver do
+    begin
+      VendorLib := AInfoConexaoSQL.VendorLib;
+    end;
+
     FConexao.Connected := True;
+
     Result := True;
   except
      on E: Exception do
