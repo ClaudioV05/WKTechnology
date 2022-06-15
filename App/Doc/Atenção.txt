@@ -1,0 +1,23 @@
+Versão do Delphi: 10 Seatle
+Versão do MySQL: 10.6.5
+
+Configuração padrão:
+
+ Database 'wktechnology';
+ DriverID  := 'MySQL';
+ Password  := '';
+ Protocol  := '';
+ Server    := '127.0.0.1';
+ Port      := '3306';
+ UserName  := 'root';
+
+Atenção:
+'Password sem senha';
+É obrigatório o uso da 'libmysql.dll' junto do .Exe;
+
+Caso for compilar a aplicação na IDE, atentar para o OutPut directory do Delphi, que deve estar configurado de forma
+default .\$(Platform)\$(Config)
+
+Localização exata desta configuração: aba 'Project' > 'Options' > 'Delphi Compiler'
+
+
