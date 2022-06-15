@@ -29,8 +29,8 @@ object FrmPrincipal: TFrmPrincipal
       AlignWithMargins = True
       Left = 3
       Top = 3
-      Width = 444
-      Height = 291
+      Width = 960
+      Height = 540
       HelpType = htKeyword
       Align = alClient
       AutoSize = True
@@ -2008,6 +2008,8 @@ object FrmPrincipal: TFrmPrincipal
       Transparent = True
       ExplicitLeft = 11
       ExplicitTop = -45
+      ExplicitWidth = 444
+      ExplicitHeight = 291
     end
   end
   object PanGeral: TPanel

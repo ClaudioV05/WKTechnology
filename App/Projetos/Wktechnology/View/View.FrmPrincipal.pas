@@ -98,7 +98,7 @@ begin
 
   with AInfoConexaoSQL do
   begin
-    Database  := 'wktechnology'; // Caminho do banco de dados.
+    Database  := 'wktechnology';
     DriverID  := 'MySQL';
     Password  := '';
     Protocol  := '';

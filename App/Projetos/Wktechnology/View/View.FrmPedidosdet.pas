@@ -186,7 +186,7 @@ begin
       LimparCampos;
       Pesquisa(rpRegistro, UPaginaAtual, UTamPagina, UCodPedido);
       CarregaPanTotais;
-      EdtDescProduto.SetFocus;
+      EdtCodProduto.SetFocus;
     end
     else
       MessageDlgPos(Erro, mtError, [mbOk], 0, GetXMsg(Self), GetYMsg(Self));
@@ -244,7 +244,7 @@ begin
   if (StgLista.Cells[0, URow] = EmptyStr) then
     Exit;
 
-  if (MessageDlgPos('Finalizar Venda?', mtConfirmation, [mbYes, mbNo], 0, GetXMsg(Self), GetYMsg(Self), mbNo) = mrYes) then
+  if (MessageDlgPos('Confirmar?', mtConfirmation, [mbYes, mbNo], 0, GetXMsg(Self), GetYMsg(Self), mbNo) = mrYes) then
   begin
 
     CtrlPedidos := TControllerPedidos.Create;

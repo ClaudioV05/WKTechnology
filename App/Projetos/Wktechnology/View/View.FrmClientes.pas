@@ -214,7 +214,9 @@ begin
       SelectNext(ActiveControl, True, True);
   end;
 
-  if (Key = VK_F5) then
+  if (Key = VK_F3) then
+    BtnPesquisarClick(Sender)
+  else if (Key = VK_F5) then
     BtnConfirmaClienteClick(Sender);
 
 end;

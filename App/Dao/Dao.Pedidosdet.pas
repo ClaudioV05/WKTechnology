@@ -217,7 +217,8 @@ begin
                      + ', PRECOUNITARIO = :PRECOUNITARIO'
                      + ', VALORTOTAL = :VALORTOTAL'
                      // Cláusula WHERE para individualizar o registro a ser gravado (atualizado).
-                     + ' WHERE CODIGO = ' + IntToStr(AModelPedidosdet.CODIGO);
+                     + ' WHERE CODIGO = ' + IntToStr(AModelPedidosdet.CODIGO)
+                     + ' AND SEQUENCIAL = ' + IntToStr(AModelPedidosdet.SEQUENCIAL);
 
   InformaParams(AModelPedidosdet, AFDQuery);
 

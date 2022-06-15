@@ -27,7 +27,6 @@ object FrmPedidosdet: TFrmPedidosdet
     Color = clWindow
     ParentBackground = False
     TabOrder = 0
-    ExplicitHeight = 470
     object lblCodProduto: TLabel
       Left = 10
       Top = 12
@@ -71,7 +70,7 @@ object FrmPedidosdet: TFrmPedidosdet
       Left = 54
       Top = 35
       Width = 178
-      Height = 30
+      Height = 21
       CharCase = ecUpperCase
       TabOrder = 1
       OnChange = EdtDescProdutoChange
@@ -80,7 +79,7 @@ object FrmPedidosdet: TFrmPedidosdet
       Left = 10
       Top = 91
       Width = 139
-      Height = 30
+      Height = 21
       Alignment = taRightJustify
       CharCase = ecUpperCase
       TabOrder = 2
@@ -89,7 +88,7 @@ object FrmPedidosdet: TFrmPedidosdet
       Left = 10
       Top = 143
       Width = 139
-      Height = 30
+      Height = 21
       Alignment = taRightJustify
       CharCase = ecUpperCase
       TabOrder = 3
@@ -144,7 +143,7 @@ object FrmPedidosdet: TFrmPedidosdet
       Left = 10
       Top = 35
       Width = 39
-      Height = 30
+      Height = 21
       Alignment = taRightJustify
       CharCase = ecUpperCase
       NumbersOnly = True
@@ -160,9 +159,6 @@ object FrmPedidosdet: TFrmPedidosdet
     Height = 463
     Align = alClient
     TabOrder = 1
-    ExplicitLeft = 196
-    ExplicitWidth = 563
-    ExplicitHeight = 470
     object PanBotoes: TPanel
       Left = 1
       Top = 1
@@ -172,7 +168,6 @@ object FrmPedidosdet: TFrmPedidosdet
       Color = clWhite
       ParentBackground = False
       TabOrder = 0
-      ExplicitWidth = 561
       object BtnAlterar: TBitBtn
         Left = 4
         Top = 6
@@ -319,9 +314,6 @@ object FrmPedidosdet: TFrmPedidosdet
       TabOrder = 2
       OnKeyPress = StgListaKeyPress
       OnSelectCell = StgListaSelectCell
-      ExplicitTop = 37
-      ExplicitWidth = 561
-      ExplicitHeight = 432
     end
   end
   object Panel3: TPanel
@@ -367,7 +359,6 @@ object FrmPedidosdet: TFrmPedidosdet
       ParentBackground = False
       ParentFont = False
       TabOrder = 0
-      ExplicitHeight = 35
     end
   end
 end
