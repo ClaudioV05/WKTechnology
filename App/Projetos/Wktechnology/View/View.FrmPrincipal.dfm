@@ -29,8 +29,8 @@ object FrmPrincipal: TFrmPrincipal
       AlignWithMargins = True
       Left = 3
       Top = 3
-      Width = 960
-      Height = 540
+      Width = 444
+      Height = 291
       HelpType = htKeyword
       Align = alClient
       AutoSize = True
@@ -2008,8 +2008,6 @@ object FrmPrincipal: TFrmPrincipal
       Transparent = True
       ExplicitLeft = 11
       ExplicitTop = -45
-      ExplicitWidth = 444
-      ExplicitHeight = 291
     end
   end
   object PanGeral: TPanel
@@ -2019,8 +2017,6 @@ object FrmPrincipal: TFrmPrincipal
     Height = 384
     Align = alLeft
     TabOrder = 0
-    ExplicitLeft = 8
-    ExplicitTop = -61
     object BtnNovaVenda: TButton
       Left = 14
       Top = 4

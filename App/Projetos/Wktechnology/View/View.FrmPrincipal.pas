@@ -56,6 +56,7 @@ begin
   try
     Screen.Cursor := crHourglass;
     Application.CreateForm(TFrmClientes, FrmClientes);
+    PanGeral.Visible := False;
     FrmClientes.Show;
     MostraEscondePanFundo(False);
 
@@ -70,7 +71,10 @@ begin
   if EFormFilho then
   begin
     if MDIChildCount = 1 then
-      PanFundo.Visible := True
+    begin
+      PanFundo.Visible := True;
+      PanGeral.Visible := True;
+    end
     else
       PanFundo.Visible := False;
   end

@@ -367,15 +367,11 @@ begin
 
       if ValorPesquisa <> EmptyStr then
       begin
-        // Descomentar só para campos tipo VARCHAR ou CHAR
-        //if CampoPesquisa = 'DESCRICAO' then
-        //  CampoPesquisa := CampoPesquisa + ' collate WIN_PTBR ';
-
         case ModoPesquisa of
           mpComecaCom:
-            AFDQuery.SQL.Add('AND PRODUTOS.' + CampoPesquisa + ' starting with ''' + ValorPesquisa + '''');
+            AFDQuery.SQL.Add('AND PRODUTOS.' + CampoPesquisa + ' LIKE ''' + ValorPesquisa + '%''');
           mpContem:
-            AFDQuery.SQL.Add('AND PRODUTOS.' + CampoPesquisa + ' containing ''' + ValorPesquisa + '''');
+            AFDQuery.SQL.Add('AND PRODUTOS.' + CampoPesquisa + ' LIKE ''%' + ValorPesquisa + '''');
           mpIgual:
             AFDQuery.SQL.Add('AND PRODUTOS.' + CampoPesquisa + ' = ''' + ValorPesquisa + '''');
         end;
@@ -394,8 +390,6 @@ begin
     begin
       AFDQuery.SQL.Add('WHERE PRODUTOS.CODIGO = ' + IntToStr(ValorPK));
     end;
-
-    AFDQuery.SQL.Add('LIMIT ' + StrTamPagina + ' OFFSET ' + StrSkip + '');
 
     AFDQuery.Open;
 

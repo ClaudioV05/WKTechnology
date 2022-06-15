@@ -105,7 +105,7 @@ object FrmClientes: TFrmClientes
     object CboModoPesquisa: TComboBox
       Left = 110
       Top = 20
-      Width = 83
+      Width = 89
       Height = 21
       Style = csDropDownList
       Font.Charset = ANSI_CHARSET
