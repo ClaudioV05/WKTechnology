@@ -1,11 +1,11 @@
 # WKTechnology App
 
-## This project was developed as part of the WK Technology selection process.
+## Project status: Finished
 
-## Tools used:
+## 🛠 Development tools
 
-- [x] Delphi XE10 Seattle Development.
-- [x] Visual Studio Code.
-- [x] MySQL database.
-- [x] Versioning: Git.
-- [x] Repository: GitHub.
+The following tools were used in building the project:
+
+- [Delphi XE10 Seatle](https://www.embarcadero.com/products/delphi)
+- [MySQL](https://www.mysql.com/)
+- [Visual studio code](https://code.visualstudio.com/)
